@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.green.hoteldog.reservation.ReservationMapper">
+    <select id="getDogInfoReservation">
+
+    </select>
+    <select id="getUserReservation">
+        SELECT B.res_pk AS resPk ,B.user_pk AS userPk
+        ,B.hotel_pk AS hotelPk,B.from_date AS fromDate
+        ,B.to_date AS toDate
+        FROM t_user A
+        JOIN t_reservation B
+        ON A.user_pk=B.user_pk
+        WHERE B.user_pk=#{userPk}
+    </select>
+</mapper>
